@@ -1,3 +1,5 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 # Unit I: Ax = b and the Four Subspaces
 
 ## Seesion 1.1: The Geometry of Linear Equations
