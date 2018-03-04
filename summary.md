@@ -3,7 +3,12 @@
 ## Seesion 1.1: The Geometry of Linear Equations
 
 We have a system of equations:
-`\[\begin{aligned}2x - y &= 0 \\ -x + 2y &= 3\end{aligned}\]`
+$$
+\begin{aligned}
+2x - y &= 0 \\
+-x + 2y &= 3
+\end{aligned}
+$$
 
 ### Row Picture
 
