@@ -1,4 +1,15 @@
 # MIT-18.06SC-LinearAlgebra
-I am Learning MIT 18.06 SC Linear Algebra and I would like to share my notes or summary here. I plan to complete each session of the course every day.
 
-Markdown: please go to [summary.md](./summary.md)
+I am Learning [MIT 18.06 SC Linear Algebra](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/index.htm) and I would like to share my notes or summary here. I plan to complete each session of the course every day. Welcome to follow me.
+
+### Markdown: Please go to [summary.md](./summary.md)
+ATTENTION: Your web browser needs the MathJax support in order to show the mathematical formulas in the markdown file correctly and beatutily.
+
+- If you're using Chrome, please install this extension from [here](https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima) and then refresh the page.
+- If you're using other browsers, I have no idea to help you.
+- Welcome any new ideas to show formulas elegantly in markdown files on GitHub.
+
+>WHY GITHUB DO NOT SUPPORT LATEX WHEN MARKING UP MARKDOWN... :(
+
+### PDF: Please go to [summary.pdf](./summary.pdf)
+>I plan to modify the tex file so that it can output a more elegant PDF if time is available. But right now, I'm just going to post the PDF converted automatically from the original markdown file by pandoc. Forgive me if the PDF looks ugly.
