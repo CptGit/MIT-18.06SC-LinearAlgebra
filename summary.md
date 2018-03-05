@@ -8,7 +8,7 @@ Seesion 1.1: The Geometry of Linear Equations
 
 We have a system of equations:
 $$
-\left\{
+\left\\{
 \begin{aligned}
 2x - y &= 0 \\\\
 -x + 2y &= 3
