@@ -13,7 +13,7 @@ $$
 2x - y &= 0 \\\\
 -x + 2y &= 3
 \end{aligned}
-\right.
+\right .
 $$
 
 ### Row Picture
