@@ -1,6 +1,6 @@
 <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
 
-Unit I: Ax = b and the Four Subspaces
+Unit I: $A\boldsymbol{x} = \boldsymbol{b}$ and the Four Subspaces
 ============
 
 Seesion 1.1: The Geometry of Linear Equations
@@ -59,3 +59,50 @@ $$
 $$
 
 A matrix times by a vector is just **a linear combination of the column vectors of the matrix**.
+
+------------------------
+
+Session 1.2: An Overview of Key Ideas
+------------------
+
+### Vectors
+Let us take linear combinations of vectors.
+
+### Matrices
+The product of a matrix and a vector is
+a combination of the columns of the matrix. 
+
+### Subspaces
+All combinations of column vectors creates a subspace.
+The subspaces of $\mathbb{R}^3$ are:
+
+- the origin,
+- a line through the origin,
+- a plane through the origin,
+- all of $\mathbb{R}^3$.
+
+
+### Conclusion
+- $A$ is invertible
+
+    $\Leftrightarrow$ $A\boldsymbol{x} = \boldsymbol{b}$ has the unique solution $\boldsymbol{x}$ for each $\boldsymbol{b}$
+
+    $\Leftrightarrow$ $A\boldsymbol{x} = 0$ has no non-zero solution $\boldsymbol{x}$
+
+    $\Leftrightarrow$ The columns of $A$ are *independent*
+
+    $\Leftrightarrow$ All vectors $A\boldsymbol{x}$ cover the whole vector space
+
+    Example: $A = \begin{bmatrix}1 & 0 & 0 \\\\ -1 & 1 & 0 \\\\ 0 & -1 & 1\end{bmatrix}$
+
+- $A$ is not invertible
+
+    $\Leftrightarrow$ $A\boldsymbol{x} = \boldsymbol{b}$ has a solution $\boldsymbol{x}$ only for some of $\boldsymbol{b}$ in the vector space
+
+    $\Leftrightarrow$ $A\boldsymbol{x} = 0$ has non-zero solutions $\boldsymbol{x}$
+
+    $\Leftrightarrow$ The columns of $A$ are *dependent*
+
+    $\Leftrightarrow$ All vectors $A\boldsymbol{x}$ lies in only a subspace of the vector space
+
+    Example: $A = \begin{bmatrix}1 & 0 & -1 \\\\ -1 & 1 & 0 \\\\ 0 & -1 & 1\end{bmatrix}$
