@@ -1,6 +1,6 @@
 # MIT-18.06SC-LinearAlgebra
 
-I am learning [MIT 18.06 SC Linear Algebra](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/index.htm) and I would like to share my notes or summary here. I plan to complete each session of the course every day. Welcome to follow me.
+I am learning [MIT 18.06 SC Linear Algebra](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/index.htm). I would like to share my notes or summary here. My plan is to complete one session of the course every day. Welcome to follow me.
 
 ### Markdown: Please go to [summary.md](./summary.md)
 ATTENTION: Your web browser needs the MathJax support in order to show the mathematical formulas in the markdown file correctly and beautifully.
