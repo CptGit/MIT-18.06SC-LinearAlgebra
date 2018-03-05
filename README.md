@@ -6,7 +6,7 @@ I am learning [MIT 18.06 SC Linear Algebra](https://ocw.mit.edu/courses/mathemat
 ATTENTION: Your web browser needs the MathJax support in order to show the mathematical formulas in the markdown file correctly and beautifully.
 
 - If you're using Chrome, please install an extension from [here](https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima) and then refresh the page.
-- If you're using other browsers, I have no idea to help you.
+- If you're using other browsers, I have no idea to help you but suggest you reading the PDF version below.
 - Welcome any new ideas about how to show formulas elegantly in markdown files on GitHub.
 
 >WHY GITHUB DO NOT SUPPORT LATEX WHEN MARKING UP MARKDOWN... :(
