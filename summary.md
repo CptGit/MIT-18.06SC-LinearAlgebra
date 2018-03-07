@@ -158,9 +158,9 @@ $$
 P = \begin{bmatrix}0 & 1 & 0 \\\\ 1 & 0 & 0 \\\\ 0 & 0 & 1\end{bmatrix}.
 $$
 
-$P$ is a permutation matrix and the first and second rows of the matrix $PA$ are the second and first rows of the matrix $A$.
+$P$ is a *permutation matrix* and the first and second rows of the matrix $PA$ are the second and first rows of the matrix $A$.
 
-Note, matrix multiplication is associative but not commutative.
+Note, matrix multiplication is *associative* but *not commutative*.
 
 ### Inverses
 We have a matrix:
@@ -176,3 +176,111 @@ E_{21}^{-1} = \begin{bmatrix}1 & 0 & 0 \\\\ 3 & 1 & 0 \\\\ 0 & 0 & 1\end{bmatrix
 $$
 
 In fact, $E_{21}^{-1}E_{21} = I$.
+
+-------------------
+
+Session 1.4: : Multiplication and Inverse Matrices
+------------------
+
+### Four and a half ways we see matrix multiplication
+
+We have $AB = C$. $A$ is an $m × n$ matrix and $B$ is an $n × p$ matrix, then $C$ is an $m × p$ matrix. We use $c_{ij}$ to denote the entry in row $i$ and column $j$ of matrix $C$ and the same denotion applys to $a_{ij}$ and $b_{ij}$.
+
+#### 1. Row times colum
+
+$c_{ij} = \sum_{k=1}^n a_{ik}b_{kj}$
+
+#### 2. Columns
+
+The product of matrix $A$ and column $j$ of matrix $B$ equals column $j$ of matrix $C$. This tells us that the columns of $C$ are combinations of columns of $A$.
+
+$$
+A
+\left[
+\begin{array}{ccc}
+\begin{matrix} | \\\\ column 1 \\\\ | \end{matrix} &
+\begin{matrix} | \\\\ column 2 \\\\ | \end{matrix} &
+\begin{matrix} | \\\\ column 3 \\\\ | \end{matrix}
+\end{array}
+\right]
+=
+\left[
+\begin{array}{ccc}
+\begin{matrix} | \\\\ A(column 1) \\\\ | \end{matrix} &
+\begin{matrix} | \\\\ A(column 2) \\\\ | \end{matrix} &
+\begin{matrix} | \\\\ A(column 3) \\\\ | \end{matrix}
+\end{array}
+\right]
+$$
+
+#### 3.Rows
+The product of row $i$ of matrix $A$ and matrix $B$ equals row $i$ of matrix $C$. So the rows of $C$ are combinations of rows of $B$. 
+
+$$
+\left[
+\begin{matrix}
+\mathrm{}
+--- & row 1 & --- \\\\
+--- & row 2 & --- \\\\
+--- & row 3 & ---
+\end{matrix}
+\right]
+B
+=
+\left[
+\begin{matrix}
+\mathrm{}
+--- & (row 1)B & --- \\\\
+--- & (row 2)B & --- \\\\
+--- & (row 3)B & ---
+\end{matrix}
+\right]
+$$
+
+#### 4. Column times row
+
+$$
+AB = \sum_{k=1}{n}
+\begin{bmatrix}a_{1k} \\\\ \vdots \\\\ a_{mk}\end{bmatrix}
+\begin{bmatrix}b_{k1} & \vdots & b_{kp}\end{bmatrix}
+$$
+
+>note: a typo in the MIT's lecture summary here: $b_{kp}$, not $b_{kn}$.
+
+#### 5. Blocks
+
+$$
+\begin{bmatrix}A_1 & A_2 \\\\ A_3 & A_4 \end{bmatrix}
+\begin{bmatrix}B_1 & B_2 \\\\ B_3 & B_4 \end{bmatrix}
+=
+\begin{bmatrix}
+A_1B_1+A_2B_3 & A_1B_2+A_2B_4 \\\\
+A_3B_1+A_4B_3 & A_3B_2+A_4B_4
+\end{bmatrix}
+$$
+
+### Inverses
+
+If $A$ is *singular* or *not invertible*,
+
+then A does not have an inverse,
+
+and we can find some non-zero vector $\boldsymbol{x}$ for which $A\boldsymbol{x} = 0$
+
+#### Gauss-Jordan Elimination
+
+$
+E
+\left[
+\begin{array}{c|c}
+A & I
+\end{array}
+\right]
+=
+\left[
+\begin{array}{c|c}
+I & E
+\end{array}
+\right]
+$,
+if $EA = I$, then $E = A^{-1}$.
