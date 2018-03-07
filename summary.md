@@ -217,24 +217,22 @@ $$
 The product of row $i$ of matrix $A$ and matrix $B$ equals row $i$ of matrix $C$. So the rows of $C$ are combinations of rows of $B$. 
 
 $$
-\left[
+\left [
 \begin{matrix}
-\mathrm{}
 --- & row 1 & --- \\\\
 --- & row 2 & --- \\\\
 --- & row 3 & ---
 \end{matrix}
-\right]
+\right ]
 B
 =
-\left[
+\left [
 \begin{matrix}
-\mathrm{}
 --- & (row 1)B & --- \\\\
 --- & (row 2)B & --- \\\\
 --- & (row 3)B & ---
 \end{matrix}
-\right]
+\right ]
 $$
 
 #### 4. Column times row
