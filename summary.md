@@ -203,8 +203,7 @@ A
 \begin{matrix} | \\\\ column 3 \\\\ | \end{matrix}
 \end{array}
 \right]
-=
-\left[
+=\left[
 \begin{array}{ccc}
 \begin{matrix} | \\\\ A(column 1) \\\\ | \end{matrix} &
 \begin{matrix} | \\\\ A(column 2) \\\\ | \end{matrix} &
@@ -217,22 +216,21 @@ $$
 The product of row $i$ of matrix $A$ and matrix $B$ equals row $i$ of matrix $C$. So the rows of $C$ are combinations of rows of $B$. 
 
 $$
-\left [
+\left[
 \begin{matrix}
 --- & row 1 & --- \\\\
 --- & row 2 & --- \\\\
 --- & row 3 & ---
 \end{matrix}
-\right ]
+\right]
 B
-=
-\left [
+=\left[
 \begin{matrix}
 --- & (row 1)B & --- \\\\
 --- & (row 2)B & --- \\\\
 --- & (row 3)B & ---
 \end{matrix}
-\right ]
+\right]
 $$
 
 #### 4. Column times row
@@ -250,8 +248,7 @@ $$
 $$
 \begin{bmatrix}A_1 & A_2 \\\\ A_3 & A_4 \end{bmatrix}
 \begin{bmatrix}B_1 & B_2 \\\\ B_3 & B_4 \end{bmatrix}
-=
-\begin{bmatrix}
+=\begin{bmatrix}
 A_1B_1+A_2B_3 & A_1B_2+A_2B_4 \\\\
 A_3B_1+A_4B_3 & A_3B_2+A_4B_4
 \end{bmatrix}
@@ -274,8 +271,7 @@ E
 A & I
 \end{array}
 \right]
-=
-\left[
+=\left[
 \begin{array}{c|c}
 I & E
 \end{array}
