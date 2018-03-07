@@ -184,9 +184,9 @@ Session 1.4: : Multiplication and Inverse Matrices
 
 ### Four and a half ways we see matrix multiplication
 
-We have $AB = C$. $A$ is an $m × n$ matrix and $B$ is an $n × p$ matrix, then $C$ is an $m × p$ matrix. We use $c_{ij}$ to denote the entry in row $i$ and column $j$ of matrix $C$ and the same denotion applys to $a_{ij}$ and $b_{ij}$.
+We have $AB = C$. $A$ is an $m × n$ matrix and $B$ is an $n × p$ matrix, then $C$ is an $m × p$ matrix. We use $c_{ij}$ to denote the entry in row $i$ and column $j$ of matrix $C$ and the same denotation applies to $a_{ij}$ and $b_{ij}$.
 
-#### 1. Row times colum
+#### 1. Row times column
 
 $c_{ij} = \sum_{k=1}^n a_{ik}b_{kj}$
 
