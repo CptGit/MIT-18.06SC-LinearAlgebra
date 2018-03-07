@@ -196,20 +196,16 @@ The product of matrix $A$ and column $j$ of matrix $B$ equals column $j$ of matr
 
 $$
 A
-\left[
-\begin{array}{ccc}
-\begin{matrix} | \\\\ column 1 \\\\ | \end{matrix} &
-\begin{matrix} | \\\\ column 2 \\\\ | \end{matrix} &
-\begin{matrix} | \\\\ column 3 \\\\ | \end{matrix}
-\end{array}
-\right]
-=\left[
-\begin{array}{ccc}
-\begin{matrix} | \\\\ A(column 1) \\\\ | \end{matrix} &
-\begin{matrix} | \\\\ A(column 2) \\\\ | \end{matrix} &
-\begin{matrix} | \\\\ A(column 3) \\\\ | \end{matrix}
-\end{array}
-\right]
+\begin{bmatrix}
+| & | & | \\\\
+column 1 & column 2 & column 3 \\\\
+| & | & |
+\end{bmatrix}
+=\begin{bmatrix}
+| & | & | \\\\
+A(column 1) & A(column 2) & A(column 3) \\\\
+| & | & |
+\end{bmatrix}
 $$
 
 #### 3.Rows
