@@ -269,7 +269,7 @@ and we can find some non-zero vector $\boldsymbol{x}$ for which $A\boldsymbol{x}
 
 #### Gauss-Jordan Elimination
 
-$
+$$
 E
 \left[
 \begin{array}{c|c}
@@ -282,5 +282,5 @@ A & I
 I & E
 \end{array}
 \right]
-$,
-if $EA = I$, then $E = A^{-1}$.
+$$
+If $EA = I$, then $E = A^{-1}$.
