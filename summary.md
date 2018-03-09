@@ -1,5 +1,7 @@
 <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
 
+[TOC]
+
 Unit I: $A\boldsymbol{x} = \boldsymbol{b}$ and the Four Subspaces
 ============
 
@@ -36,7 +38,7 @@ Geometrically, we can find one copy of $\boldsymbol{v_1}$ added to two copies of
 
 >I will add a figure when time is available >_>
 
-### Matrx Picture
+### Matrix Picture
 
 We rewrite the equations in our example as a compact form,
 
@@ -109,7 +111,7 @@ The subspaces of $\mathbb{R}^3$ are:
 
 ------------------
 
-Session 1.3 Elimination with Matrices
+Session 1.3: Elimination with Matrices
 --------------
 
 ### Method of Elimination
@@ -179,12 +181,12 @@ In fact, $E_{21}^{-1}E_{21} = I$.
 
 -------------------
 
-Session 1.4: : Multiplication and Inverse Matrices
+Session 1.4: Multiplication and Inverse Matrices
 ------------------
 
 ### Four and a half ways we see matrix multiplication
 
-We have $AB = C$. $A$ is an $m × n$ matrix and $B$ is an $n × p$ matrix, then $C$ is an $m × p$ matrix. We use $c_{ij}$ to denote the entry in row $i$ and column $j$ of matrix $C$ and the same denotation applies to $a_{ij}$ and $b_{ij}$.
+We have $AB = C$. $A$ is an $m \times n$ matrix and $B$ is an $n \times p$ matrix, then $C$ is an $m \times p$ matrix. We use $c_{ij}$ to denote the entry in row $i$ and column $j$ of matrix $C$ and the same denotation applies to $a_{ij}$ and $b_{ij}$.
 
 #### 1. Row times column
 
@@ -234,7 +236,7 @@ $$
 $$
 AB = \sum_{k=1}{n}
 \begin{bmatrix}a_{1k} \\\\ \vdots \\\\ a_{mk}\end{bmatrix}
-\begin{bmatrix}b_{k1} & \vdots & b_{kp}\end{bmatrix}
+\begin{bmatrix}b_{k1} & \cdots & b_{kp}\end{bmatrix}
 $$
 
 >note: a typo in the MIT's lecture summary here: $b_{kp}$, not $b_{kn}$.
@@ -274,3 +276,60 @@ I & E
 \right]
 $$
 If $EA = I$, then $E = A^{-1}$.
+
+----------------------
+
+Session 1.5: Factorization into $A = LU$
+------------
+
+### Inverse of a product
+
+$$(AB)^{-1} = B^{-1}A^{-1}$$
+
+### Transpose of a product
+
+$$(AB)^{T} = B^{T}A^{T}, \quad (A^{T})^{-1} = (A^{-1})^{T}$$
+
+### $A = LU$
+
+We can use elimination to convert $A$ into an upper triangular matrix $U$, that is $EA = U$, and further we can also convert this to a factorization $A = LU$ in which $L = E^{-1}$.
+
+For example, in a three dimensional case, if $E_{32}E_{31}E_{21}A = U$ then $A=E_{21}^{-1}E_{31}^{-1}E_{32}^{-1}U = LU$. Suppose $E_{31}$ is the identity matrix and $E_{32}$ and $E_{21}$ are as shown below:
+
+$$
+\begin{array}{cccc}
+E_{32} & E_{21} & & E \\\\
+\begin{bmatrix}1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & -5 & 1\end{bmatrix}
+& \begin{bmatrix}1 & 0 & 0 \\\\ -2 & 1 & 0 \\\\ 0 & 0 & 1\end{bmatrix}
+& = & \begin{bmatrix}1 & 0 & 0 \\\\ -2 & 1 & 0 \\\\ 10 & -5 & 1\end{bmatrix}
+\end{array}.
+$$
+
+Here $L = E^{-1} = E_{21}^{−1}E_{32}^{-1}$:
+
+$$
+\begin{array}{cccc}
+E_{21}^{-1} & E_{32}^{-1} & & L \\\\
+\begin{bmatrix}1 & 0 & 0 \\\\ \underline{2} & 1 & 0 \\\\ 0 & 0 & 1\end{bmatrix}
+& \begin{bmatrix}1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & \underline{5} & 1\end{bmatrix}
+& = & \begin{bmatrix}1 & 0 & 0 \\\\ \underline{2} & 1 & 0 \\\\ 0 & \underline{5} & 1\end{bmatrix}
+\end{array}
+$$
+
+Notice the 0 in row three column one of $L$, where $E$ had a $10$. The factorization $A = LU$ is preferable to the statement $EA = U$ because the combination of row subtractions does not have the effect on $L$ that it did on $E$.
+
+**If there are no row exchanges, the multipliers from the elimination matrices are copied directly into $L$.**
+
+### Cost of elimination
+
+If we define a typical operation is to multiply one row and then subtract it from another, then the total number of operations needed to factor $n \times n$ $A$ into $LU$ is on the order of $n^3$:
+
+$$1^2 + 2^2 + \cdots + (n - 1)^2 + n^2 = \sum_{i = 1}^{n}i^2 \approx \int_0^n x\,\mathrm{d}x = \frac{1}{3}n^3.$$
+
+While we’re factoring $A$ we’re also operating on $\boldsymbol{b}$. That costs about $n^2$ operations, which is hardly worth counting compared to $1/3n^3$. 
+
+### Row exchanges
+
+- The inverse of any permutation matrix $P$ is $P^{-1} = P^{T}$.
+
+- There are $n!$ different ways to permute the rows of an $n \times n$ matrix (including the permutation that leaves all rows unfixed) so there are $n!$ permutation matrices. These matrices form a *multiplicative group*.
