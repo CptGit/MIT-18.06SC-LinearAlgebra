@@ -331,3 +331,51 @@ While we’re factoring $A$ we’re also operating on $\boldsymbol{b}$. That cos
 The inverse of any permutation matrix $P$ is $P^{-1} = P^{T}$.
 
 There are $n!$ different ways to permute the rows of an $n \times n$ matrix (including the permutation that leaves all rows unfixed) so there are $n!$ permutation matrices. These matrices form a *multiplicative group*.
+
+-----------------
+
+Session 1.6: Transpose, Permutation, Vector Spaces $\mathbb{R}^n$
+----------------
+
+### Permutations
+
+>Nothing new here.
+
+### Transposes
+
+$$(A^T)_{ij} = A_{ji}$$
+
+Given any matrix $R$ the product $R^TR$ is always *symmetric*, which means the transpose of a matrix equals itself, because $(R^TR)^T = R^T(R^T)^T = R^TR$.
+
+### Vector spaces
+
+#### Closure
+
+A collection of vectors has to satisfy two conditions:
+
+1. closed under addition, which means the sum of any two vectors in the collection lies again in the collection,
+
+2. closed under multiplication by any real numbers, that is to say that multiplying any vector in the collection by any real number will not give a vector beyond the collection,
+
+or, to put it in another way, closed under linear combinations.
+
+s.t. we call the collection a *vector space*.
+
+#### Subspaces
+A vector space that is contained inside of another vector space is called a *subspace* of that space. For example,
+
+the subspaces of $\mathbb{R}^2$ are:
+
+1. all of $\mathbb{R}^2$,
+
+2. any line through the zero vector and
+
+3. the zero vector alone.
+
+**Every subspace must contain the zero vector.**
+
+#### Column space
+
+Given a matrix $A$, all the linear combinations of the columns of $A$ form a subspace. This is the *column space* $C(A)$.
+
+For example, if $A = \begin{bmatrix}1 & 3 \\ 2 & 3 \\ 4 & 1\end{bmatrix}$, the column space of $A$ is the plane through the origin in $\mathbb{R}^3$ containing $\begin{bmatrix}1 \\ 2 \\ 4\end{bmatrix}$ and $\begin{bmatrix}3 \\ 3 \\ 1\end{bmatrix}$.
