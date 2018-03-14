@@ -22,4 +22,4 @@ ATTENTION: Your web browser needs the MathJax support in order to show the mathe
 
 ### PDF: Please go to [summary.pdf](./summary.pdf)
 
-> I plan to modify the tex file so that it can output a more elegant PDF when time is available. But right now, I'm just going to post the PDF converted automatically from the original markdown file by Pandoc. Forgive me if the PDF looks ugly.
+I plan to modify the tex file so that it can output a more elegant PDF when time is available. But right now, I'm just going to post the PDF converted automatically from the original markdown file by Pandoc. Forgive me if the PDF looks ugly.
