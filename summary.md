@@ -87,7 +87,7 @@ The subspaces of $\mathbb{R}^3$ are:
 
     $\Leftrightarrow$ $A\boldsymbol{x} = \boldsymbol{b}$ has the unique solution $\boldsymbol{x}$ for each $\boldsymbol{b}$
 
-    $\Leftrightarrow$ $A\boldsymbol{x} = 0$ has no non-zero solution $\boldsymbol{x}$
+    $\Leftrightarrow$ $A\boldsymbol{x} = \boldsymbol{0}$ has no non-zero solution $\boldsymbol{x}$
 
     $\Leftrightarrow$ The columns of $A$ are *independent*
 
@@ -99,7 +99,7 @@ The subspaces of $\mathbb{R}^3$ are:
 
     $\Leftrightarrow$ $A\boldsymbol{x} = \boldsymbol{b}$ has a solution $\boldsymbol{x}$ only for some of $\boldsymbol{b}$ in the vector space
 
-    $\Leftrightarrow$ $A\boldsymbol{x} = 0$ has non-zero solutions $\boldsymbol{x}$
+    $\Leftrightarrow$ $A\boldsymbol{x} = \boldsymbol{0}$ has non-zero solutions $\boldsymbol{x}$
 
     $\Leftrightarrow$ The columns of $A$ are *dependent*
 
@@ -237,7 +237,7 @@ AB = \sum_{k=1}{n}
 \begin{bmatrix}b_{k1} & \cdots & b_{kp}\end{bmatrix}
 $$
 
->note: I fixed a typo in the orginal MIT's lecture summary here: $b_{kp}$ instead of $b_{kn}$.
+>note: Here I fixed a typo in the [lecture summary (PDf)](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/ax-b-and-the-four-subspaces/multiplication-and-inverse-matrices/MIT18_06SCF11_Ses1.3sum.pdf) of this session: $b_{kp}$ instead of the original $b_{kn}$.
 
 #### Blocks
 
@@ -256,7 +256,7 @@ If $A$ is *singular* or *not invertible*,
 
 then A does not have an inverse,
 
-and we can find some non-zero vector $\boldsymbol{x}$ for which $A\boldsymbol{x} = 0$
+and we can find some non-zero vector $\boldsymbol{x}$ for which $A\boldsymbol{x} = \boldsymbol{0}$
 
 #### Gauss-Jordan Elimination
 
@@ -379,3 +379,44 @@ the subspaces of $\mathbb{R}^2$ are:
 Given a matrix $A$, all the linear combinations of the columns of $A$ form a subspace. This is the *column space* $C(A)$.
 
 For example, if $A = \begin{bmatrix}1 & 3 \\ 2 & 3 \\ 4 & 1\end{bmatrix}$, the column space of $A$ is the plane through the origin in $\mathbb{R}^3$ containing $\begin{bmatrix}1 \\ 2 \\ 4\end{bmatrix}$ and $\begin{bmatrix}3 \\ 3 \\ 1\end{bmatrix}$.
+
+-----------------
+
+Session 1.7: Column Space and Nullspace
+--------------
+
+>A typo in both [Problems (PDF)](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/ax-b-and-the-four-subspaces/column-space-and-nullspace/MIT18_06SCF11_Ses1.6prob.pdf) and [Solutions (PDF)](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/ax-b-and-the-four-subspaces/column-space-and-nullspace/MIT18_06SCF11_Ses1.6sol.pdf) of this session:
+
+>>Problem 6.2: $x - 3y - x = 0$ should be $x -3y - z = 0$.
+
+### Review of subspaces
+
+The union of two subspaces is generally not a subspace, but the intersection of two subspaces is a subspace.
+
+### Column space of $A$ and solving $A\boldsymbol{x} = \boldsymbol{b}$
+
+Given a matrix $A$, the system of linear equations $A\boldsymbol{x} = \boldsymbol{b}$ is solvable exactly when $\boldsymbol{b}$ is a vector in the *column space* of $A$.
+
+### Nullspace of $A$
+
+The *nullspace* of a matrix $A$ is the collection $x$ to the equation $A\boldsymbol{x} = \boldsymbol{0}$.
+
+For example,
+
+$$
+\begin{bmatrix}1 & 1 & 2 \\ 2 & 1 & 3 \\ 3 & 1 & 4 \\ 4 & 1 & 5\end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \\ x_3\end{bmatrix} = \begin{bmatrix}0 \\ 0 \\ 0 \\ 0\end{bmatrix},
+$$
+
+the nullspace $N(A)$ consists of all multiples of $\begin{bmatrix}1 \\ 1 \\ -1\end{bmatrix}$. This nullspace is a line in $\mathbb{R}^3$.
+
+Attention, a nullspace is a vector space because it obviously satisfies the requirements about addition and scale multiplication. That is to say that any sum or multiple of solutions of $A\boldsymbol{x} = \boldsymbol{0}$ is also a solution: $A(\boldsymbol{x}_1 + \boldsymbol{x}_2) = \boldsymbol{0} + \boldsymbol{0} = \boldsymbol{0}$ and $A(c\boldsymbol{x}) = cA\boldsymbol{x} = c\boldsymbol{0} = \boldsymbol{0}$.
+
+#### Other values of $\boldsymbol{b}$
+
+The solutions to the equation:
+
+$$
+\begin{bmatrix}1 & 1 & 2 \\ 2 & 1 & 3 \\ 3 & 1 & 4 \\ 4 & 1 & 5\end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \\ x_3\end{bmatrix} = \begin{bmatrix}0 \\ 0 \\ 0 \\ 0\end{bmatrix},
+$$
+
+do not form a subspace. This conclusion is obvious since the zero vector is not a solution to the equation. Actually, the set of solutions forms a line in $\mathbb{R}^3$ that pass through the points $\begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}$ and $\begin{bmatrix}0 \\ -1 \\ 1\end{bmatrix}$, but not $\begin{bmatrix}0 \\ 0 \\ 0\end{bmatrix}$.
