@@ -386,7 +386,7 @@ Session 1.7: Column Space and Nullspace
 --------------
 
 >A typo in both [Problems (PDF)](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/ax-b-and-the-four-subspaces/column-space-and-nullspace/MIT18_06SCF11_Ses1.6prob.pdf) and [Solutions (PDF)](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/ax-b-and-the-four-subspaces/column-space-and-nullspace/MIT18_06SCF11_Ses1.6sol.pdf) of this session:
-
+>
 >>Problem 6.2: $x - 3y - x = 0$ should be $x -3y - z = 0$.
 
 ### Review of subspaces
@@ -420,3 +420,93 @@ $$
 $$
 
 do not form a subspace. This conclusion is obvious since the zero vector is not a solution to the equation. Actually, the set of solutions forms a line in $\mathbb{R}^3$ that pass through the points $\begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}$ and $\begin{bmatrix}0 \\ -1 \\ 1\end{bmatrix}$, but not $\begin{bmatrix}0 \\ 0 \\ 0\end{bmatrix}$.
+
+-----------------
+
+Session 1.8:  Solving $A\boldsymbol{x} = \boldsymbol{0}$: Pivot Variables, Special Solutions
+----------------
+
+>A typo in [Solutions PDF](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/ax-b-and-the-four-subspaces/solving-ax-0-pivot-variables-special-solutions/MIT18_06SCF11_Ses1.7sol.pdf) of this session:
+>>Problem 7.1: $- 23/4$ in rref of $A$ should be $23/4$, and $23/4$ in the solution $\boldsymbol{x}$ should be $-23/4$.
+
+### Computing the nullspace
+
+Just like the way we eliminate the invertible square matrix, we can do the same thing for any matrix $A$.
+
+Suppose:
+$$
+A = \begin{bmatrix}
+1 & 2 & 2 & 2 \\
+2 & 4 & 6 & 8\\
+3 & 6 & 8 & 10
+\end{bmatrix}.
+$$
+
+The elimination gives us:
+
+$$
+A = \begin{bmatrix}
+1 & 2 & 2 & 2 \\
+2 & 4 & 6 & 8 \\
+3 & 6 & 8 & 10
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+1 & 2 & 2 & 2 \\
+0 & 0 & 2 & 4 \\
+0 & 0 & 2 & 4
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+1 & 2 & 2 & 2 \\
+0 & 0 & 2 & 4 \\
+0 & 0 & 0 & 0
+\end{bmatrix}
+= U
+$$
+
+We call U in *echelon* form. The *rank* of a matrix $A$ is the number of pivots it has. In this example, the rank of $A$ is 2.
+
+### Special solutions
+
+We can use back-substitution to find the solution $\boldsymbol{x}$ to the equation $U\boldsymbol{x} = \boldsymbol{0}$. In the example, column 1 and 3 are *pivot columns*, column 2 and 4 are *free columns*. We can assign any value to $x_2$ and $x_4$; we call them *free variables*. Yes, $x_1$ and $x_3$ are *pivot variables*.
+
+Suppose $x_2 = 1$ and $x_4 = 0$, then: $x_3 = 0$ and $x_1 = -2$. So that gives us one solution $\boldsymbol{x} = \begin{bmatrix}-2 \\ 1 \\ 0 \\ 0\end{bmatrix}$. Similarly, if $x_2 = 0$ and $x_4 = 1$, then we'll get another solution $\boldsymbol{x} = \begin{bmatrix}2 \\ 0 \\ -2 \\ 1\end{bmatrix}$. The nullspace of $A$ is the collection of all linear combinations of these "special solution" vectors.
+
+A fact we should note is that the *rank* of $A$ equals the number of pivot columns, so the number of free columns is the number of columns minus the number of pivot columns, which is also the number of special solution vectors and the dimension of the nullspace.
+
+### Reduced row echelon form
+
+*Reduced row echelon form* (rref form) means pivots equal to 1 and zeros above and below the pivots. Eliminating U gives us a rref form matrix $R$:
+
+$$
+U = \begin{bmatrix}
+1 & 2 & 2 & 2 \\
+0 & 0 & 2 & 4 \\
+0 & 0 & 0 & 0
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+1 & 2 & 0 & -2 \\
+0 & 0 & 2 & 4 \\
+0 & 0 & 0 & 0
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+1 & 2 & 0 & -2 \\
+0 & 0 & 1 & 2 \\
+0 & 0 & 0 & 0
+\end{bmatrix}
+= R.
+$$
+Generally, $R$ can be rewritten with  a copy of the identity matrix in the upper left corner and some free columns on the right, possibly followed by the lower rows filled with zeros:
+$$
+R = \begin{bmatrix}
+I & F \\
+\boldsymbol{0} & \boldsymbol{0}
+\end{bmatrix}.
+$$
+
+Here $I$ is an $r \times r$ square matrix and $F$ is an $r \times (n - r)$ matrix.
+
+And we can find the nullspace matrix $N = \begin{bmatrix}-F \\ I\end{bmatrix}$ s.t. $RN = \boldsymbol{0}$. Here $I$ is an $(n - r) \times (n - r)$ square matrix and $F$ is an $r \times (n - r)$ matrix. The columns of $N$ are the special solutions.
