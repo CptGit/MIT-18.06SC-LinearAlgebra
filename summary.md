@@ -427,6 +427,7 @@ Session 1.8:  Solving $A\boldsymbol{x} = \boldsymbol{0}$: Pivot Variables, Speci
 ----------------
 
 >A typo in [Solutions PDF](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/ax-b-and-the-four-subspaces/solving-ax-0-pivot-variables-special-solutions/MIT18_06SCF11_Ses1.7sol.pdf) of this session:
+>
 >>Problem 7.1: $- 23/4$ in rref of $A$ should be $23/4$, and $23/4$ in the solution $\boldsymbol{x}$ should be $-23/4$.
 
 ### Computing the nullspace
@@ -465,7 +466,7 @@ A = \begin{bmatrix}
 = U
 $$
 
-We call U in *echelon* form. The *rank* of a matrix $A$ is the number of pivots it has. In this example, the rank of $A$ is 2.
+We call U in *echelon* form. The *rank* of a matrix $A$ is the number of pivots it has. In this example, the rank of $A$ is $2$.
 
 ### Special solutions
 
