@@ -426,7 +426,7 @@ do not form a subspace. This conclusion is obvious since the zero vector is not 
 Session 1.8:  Solving $A\boldsymbol{x} = \boldsymbol{0}$: Pivot Variables, Special Solutions
 ----------------
 
->A typo in [Solutions PDF](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/ax-b-and-the-four-subspaces/solving-ax-0-pivot-variables-special-solutions/MIT18_06SCF11_Ses1.7sol.pdf) of this session:
+>A typo in [Solutions (PDF)](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/ax-b-and-the-four-subspaces/solving-ax-0-pivot-variables-special-solutions/MIT18_06SCF11_Ses1.7sol.pdf) of this session:
 >
 >>Problem 7.1: $- 23/4$ in rref of $A$ should be $23/4$, and $23/4$ in the solution $\boldsymbol{x}$ should be $-23/4$.
 
@@ -472,7 +472,7 @@ We call U in *echelon* form. The *rank* of a matrix $A$ is the number of pivots 
 
 We can use back-substitution to find the solution $\boldsymbol{x}$ to the equation $U\boldsymbol{x} = \boldsymbol{0}$. In the example, column 1 and 3 are *pivot columns*, column 2 and 4 are *free columns*. We can assign any value to $x_2$ and $x_4$; we call them *free variables*. Yes, $x_1$ and $x_3$ are *pivot variables*.
 
-Suppose $x_2 = 1$ and $x_4 = 0$, then: $x_3 = 0$ and $x_1 = -2$. So that gives us one solution $\boldsymbol{x} = \begin{bmatrix}-2 \\ 1 \\ 0 \\ 0\end{bmatrix}$. Similarly, if $x_2 = 0$ and $x_4 = 1$, then we'll get another solution $\boldsymbol{x} = \begin{bmatrix}2 \\ 0 \\ -2 \\ 1\end{bmatrix}$. The nullspace of $A$ is the collection of all linear combinations of these "special solution" vectors.
+Suppose $x_2 = 1$ and $x_4 = 0$, then: $x_3 = 0$ and $x_1 = -2$. So that gives us one solution $\boldsymbol{x} = \begin{bmatrix}-2 \\ 1 \\ 0 \\ 0\end{bmatrix}$. Similarly, if $x_2 = 0$ and $x_4 = 1$, then we'll get another solution $\boldsymbol{x} = \begin{bmatrix}2 \\ 0 \\ -2 \\ 1\end{bmatrix}$. **The nullspace of $A$ is the collection of all linear combinations of these "special solution" vectors.**
 
 A fact we should note is that the *rank* of $A$ equals the number of pivot columns, so the number of free columns is the number of columns minus the number of pivot columns, which is also the number of special solution vectors and the dimension of the nullspace.
 
@@ -511,3 +511,84 @@ $$
 Here $I$ is an $r \times r$ square matrix and $F$ is an $r \times (n - r)$ matrix.
 
 And we can find the nullspace matrix $N = \begin{bmatrix}-F \\ I\end{bmatrix}$ s.t. $RN = \boldsymbol{0}$. Here $I$ is an $(n - r) \times (n - r)$ square matrix and $F$ is an $r \times (n - r)$ matrix. The columns of $N$ are the special solutions.
+
+--------------------
+
+Session 1.9: Solving $A\boldsymbol{x} = \boldsymbol{b}$: Reduced Row Form R
+---------------
+
+### Solvability conditions on $\boldsymbol{b}$
+
+We again the example in the example in the previous session:
+$$
+A = \begin{bmatrix}
+1 & 2 & 2 & 2\\
+2 & 4 & 6 & 8\\
+3 & 6 & 8 & 10
+\end{bmatrix}.
+$$
+Using Gauss-Jordan elimination:
+$$
+\left[
+\begin{array}{c|c}
+\begin{matrix}
+1 & 2 & 2 & 2\\
+2 & 4 & 6 & 2\\
+3 & 6 & 8 &10
+\end{matrix}
+&
+\begin{matrix}
+b_1 \\ b_2 \\ b_3
+\end{matrix}
+\end{array}
+\right]
+\rightarrow\cdots\rightarrow
+\left[
+\begin{array}{c|l}
+\begin{matrix}
+1 & 2 & 2 & 2\\
+0 & 0 & 2 & 4 \\
+0 & 0 & 0 & 0
+\end{matrix}
+&
+\begin{matrix}
+b_1 \\ b_2 - 2b_1 \\ b_3-b_2-b_1
+\end{matrix}
+\end{array}
+\right].
+$$
+In our example, row 3 of $A$ is completely eliminated. So if $A\boldsymbol{x} = \boldsymbol{b}$ has a solution, then $b_3 - b_2 - b_1 = 0$.
+
+From an earlier lecture, we know that $A\boldsymbol{x} = \boldsymbol{b}$ is solvable exactly when $\boldsymbol{b}$ is in the column space $C(A)$. In fact this condition is equivalent with $b_3 - b_2 - b_1 = 0$ here.
+
+### Computing solution
+
+The complete solution is a particular solution plus all the vectors in the nullspace. That is $\boldsymbol{x}_{complete} = \boldsymbol{x}_p + \boldsymbol{x}_n$, where $\boldsymbol{x}_p$ is a particular solution and $\boldsymbol{x}_n$ is a generic vector in the nullspace. To see this, we add $A\boldsymbol{x}_p = \boldsymbol{b}$ to $A\boldsymbol{x}_n = 0$ and get $A(\boldsymbol{x}_p + \boldsymbol{x}_n) = \boldsymbol{b}$ for every vector $\boldsymbol{x}_n$ in the nullspace.
+
+#### A particular solution
+
+For our matrix $A$, we choose $\boldsymbol{b} = \begin{bmatrix}1 \\ 5 \\ 6\end{bmatrix}$, then we get a particular solution $\boldsymbol{x} = \begin{bmatrix}-2 \\ 0 \\ 3/2 \\ 0\end{bmatrix}$ when we let all free variables $x_2$ and $x_4$ equal $0$. (We would get another particular solution when assigning different $x_2$ or $x_4$. This will not affect the complete solution.)
+
+#### Combined with nullspace
+
+From last lecture we learned that the nullspace of $A$ is the collection of all combinations of the special solutions $\begin{bmatrix}-2 \\ 1 \\ 0 \\ 0\end{bmatrix}$ and $\begin{bmatrix}2 \\ 0 \\ -2 \\ 1\end{bmatrix}$. Adding our particular solution to the vectors in the nullspace, we get the complete solution to the equation $A\boldsymbol{x} = \begin{bmatrix}1 \\ 5 \\6\end{bmatrix}$ is:
+$$
+\boldsymbol{x}_{complete} = \begin{bmatrix}-2 \\ 0 \\ 3/2 \\ 0\end{bmatrix} + c_1 \begin{bmatrix}-2 \\ 1 \\ 0 \\ 0\end{bmatrix} + c_2 \begin{bmatrix}-2 \\ 0 \\ -2 \\ 1\end{bmatrix},
+$$
+where $c_1$ and $c_2$ are any real numbers.
+
+>A typo in the [lecture summary (PDF)](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/ax-b-and-the-four-subspaces/solving-ax-b-row-reduced-form-r/MIT18_06SCF11_Ses1.8sum.pdf) of this session:
+>
+>>$c_1$ is missing here...
+
+The nullspace is a two dimensional subspace of $\mathbb{R}^4$, and the complete solution form a plane parallel to that through $\boldsymbol{x}_p = \begin{bmatrix}-2 \\ 0 \\ 3/2 \\ 0\end{bmatrix}$.
+
+### Rank
+
+The rank of a matrix equals the number of pivots of that matrix. If $A$ is an $m$ by $n$ matrix of rank $r$, we know $r \le m$ and $r \le n$. Actually the rank tells us all the information about solutions to the equation $A\boldsymbol{x} = \boldsymbol{b}$.
+
+|                                                 | $r = m = n$ |                    $r = n < m$                    |             $r = m < n$             |                        $r < m, r < n$                        |
+| :---------------------------------------------: | :---------: | :-----------------------------------------------: | :---------------------------------: | :----------------------------------------------------------: |
+|                       $R$                       |     $I$     | $\begin{bmatrix}I \\ \boldsymbol{0}\end{bmatrix}$ | $\begin{bmatrix}I & F\end{bmatrix}$ | $\begin{bmatrix}I & F \\ \boldsymbol{0} & \boldsymbol{0}\end{bmatrix}$ |
+| solutions to $A\boldsymbol{x} = \boldsymbol{b}$ |      1      |                      0 or 1                       |              $\infty$               |                        0 or $\infty$                         |
+
