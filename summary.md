@@ -551,9 +551,9 @@ b_1 \\ b_2 \\ b_3
 0 & 0 & 0 & 0
 \end{matrix}
 &
-\begin{matrix}
+\begin{array}{l}
 b_1 \\ b_2 - 2b_1 \\ b_3-b_2-b_1
-\end{matrix}
+\end{array}
 \end{array}
 \right].
 $$
@@ -587,8 +587,47 @@ The nullspace is a two dimensional subspace of $\mathbb{R}^4$, and the complete 
 
 The rank of a matrix equals the number of pivots of that matrix. If $A$ is an $m$ by $n$ matrix of rank $r$, we know $r \le m$ and $r \le n$. Actually the rank tells us all the information about solutions to the equation $A\boldsymbol{x} = \boldsymbol{b}$.
 
-|                                                 | $r = m = n$ |                    $r = n < m$                    |             $r = m < n$             |                        $r < m, r < n$                        |
-| :---------------------------------------------: | :---------: | :-----------------------------------------------: | :---------------------------------: | :----------------------------------------------------------: |
-|                       $R$                       |     $I$     | $\begin{bmatrix}I \\ \boldsymbol{0}\end{bmatrix}$ | $\begin{bmatrix}I & F\end{bmatrix}$ | $\begin{bmatrix}I & F \\ \boldsymbol{0} & \boldsymbol{0}\end{bmatrix}$ |
-| solutions to $A\boldsymbol{x} = \boldsymbol{b}$ |      1      |                      0 or 1                       |              $\infty$               |                        0 or $\infty$                         |
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+& r = m = n & r = n < m & r = m < n & r < m, r < n \\
+\hline
+R & I & \begin{bmatrix}I \\ \boldsymbol{0}\end{bmatrix} & \begin{bmatrix}I & F\end{bmatrix} & \begin{bmatrix}I & F \\ \boldsymbol{0} & \boldsymbol{0}\end{bmatrix} \\
+\hline
+\text{Solutions to }A\boldsymbol{x} = \boldsymbol{b} & 1 & 0\text{ or }1 & \infty & 0\text{ or }\infty \\
+\hline
+\end{array}
+$$
+
+------------
+
+Session 1.10: Independence, Basis and dimension
+----------
+
+### Linear Independence
+
+$\sum_i c_i\boldsymbol{x}_i = \boldsymbol{0}$ only when $c_1, c_2, \dots, c_n$ are all $0$.
+
+$\Leftrightarrow$ The only solution to $A\boldsymbol{x} = \boldsymbol{0}$ is $\boldsymbol{x} = \boldsymbol{0}$, which means that the nullspace of $A$ contains only the zero vector.
+
+$\Leftrightarrow$ The rank of $A$ is $n$ so there are no free variables.
+
+### Spanning a space
+
+Vectors $\boldsymbol{v}_1, \boldsymbol{v}_2, \dots, \boldsymbol{v}_k$ *span* a space when the space consists of all combinations of those vectors. The space spanned is also the smallest space containing those vectors.
+
+### Basis and dimension
+
+A *basis* for a vector space is a sequence of vectors $\boldsymbol{v}_1, \boldsymbol{v}_2, \dots, \boldsymbol{v}_d$ with two properties:
+
+- $\boldsymbol{v}_1, \boldsymbol{v}_2, \dots, \boldsymbol{v}_d$ are independent;
+- $\boldsymbol{v}_1, \boldsymbol{v}_2, \dots, \boldsymbol{v}_d$ span the vector space.
+
+The number of vectors in a basis for a vector space is the *dimension* of the space. There are exactly $n$ vectors in every basis for $\mathbb{R}^n$.
+
+### Basis of a column space and nullspace
+
+$$\text{dimension of }C(A)  = \text{number of pivot columns of }A = \text{rank}(A)$$
+
+$$\text{dimension of }N(A)  = \text{number of free variables of }A = \text{number of columns of }A - \text{rank}(A)$$
 
