@@ -1,6 +1,6 @@
 # MIT-18.06SC-LinearAlgebra
 
-I am learning [MIT 18.06 SC Linear Algebra](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/index.htm). I would like to share my notes or summary here. My plan is to complete two sessions of the course each week . Welcome to follow me and have fun!
+I am learning [MIT 18.06 SC Linear Algebra](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/index.htm). I would like to share my notes or summary here. My plan is to complete one or two sessions of the course each week . Welcome to follow me and have fun!
 
 ### HTML: Please go to [my blog](https://cptgit.github.io/)
 
