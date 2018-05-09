@@ -343,9 +343,9 @@ Session 1.6: Transpose, Permutation, Vector Spaces $\mathbb{R}^n$
 
 ### Transposes
 
-$$(A^T)_{ij} = A_{ji}$$
+$$(A^\mathrm{T})_{ij} = A_{ji}$$
 
-Given any matrix $R$ the product $R^TR$ is always *symmetric*, which means the transpose of a matrix equals itself, because $(R^TR)^T = R^T(R^T)^T = R^TR$.
+Given any matrix $R$ the product $R^\mathrm{T}R$ is always *symmetric*, which means the transpose of a matrix equals itself, because $(R^\mathrm{T}R)^\mathrm{T} = R^\mathrm{T}(R^\mathrm{T})^\mathrm{T} = R^\mathrm{T}R$.
 
 ### Vector spaces
 
@@ -660,7 +660,7 @@ The $n - r$ special solutions from a basis
 
 $\text{dim }N(A) = n - r$
 
-#### Row space $C(A^T)$
+#### Row space $C(A^\mathrm{T})$
 
 All combinations of the rows of  $A$
 
@@ -668,19 +668,19 @@ A subspace of $\mathbb{R}^n$
 
 The  first $r$ rows of  $R$ (the reduced row echelon form of $A$) form a basis
 
-$\text{dim }C(A^T) = r$
+$\text{dim }C(A^\mathrm{T}) = r$
 
-#### Left nullspace $N(A^T)$
+#### Left nullspace $N(A^\mathrm{T})$
 
-All solutions $\boldsymbol{y}$ of the equation $\boldsymbol{y}^TA = \boldsymbol{0}$
+All solutions $\boldsymbol{y}$ of the equation $\boldsymbol{y}^\mathrm{T}A = \boldsymbol{0}$
 
 A subspace of $\mathbb{R}^m$
 
 The bottom $m - r$ of $E$ form a basis
 
-$\text{dim }N(A^T) = m - r$
+$\text{dim }N(A^\mathrm{T}) = m - r$
 
-##### how to find a basis for $N(A^T)$
+##### how to find a basis for $N(A^\mathrm{T})$
 
 First we get $E$ through Gauss-Jordan elimination:
 $$
@@ -709,7 +709,7 @@ EA = \begin{bmatrix}
 0 & 0 & 0 & 0
 \end{bmatrix} = R
 $$
-In this example, The last row of $E$ satisfy the equation $\boldsymbol{y}^TA = \boldsymbol{0}$ and thus form a basis for the left nullspace of $A$.
+In this example, The last row of $E$ satisfy the equation $\boldsymbol{y}^\mathrm{T}A = \boldsymbol{0}$ and thus form a basis for the left nullspace of $A$.
 
 ### New vector space
 
@@ -817,7 +817,7 @@ $$
 
 A has rank $1$ because each of its columns is a multiple of the first column.
 
-Every rank 1 matrix $A$ can be written $A = \boldsymbol{u}\boldsymbol{v}^T$, where $\boldsymbol{u}$ and $\boldsymbol{v}$ are column vectors. We can use rank $1 matrices as building blocks for more complex matrices.
+Every rank 1 matrix $A$ can be written $A = \boldsymbol{u}\boldsymbol{v}^\mathrm{T}$, where $\boldsymbol{u}$ and $\boldsymbol{v}$ are column vectors. We can use rank $1 matrices as building blocks for more complex matrices.
 
 ### Small world graphs
 
